@@ -24,5 +24,17 @@ If you press "Enter", the (N)o default passes you on to the next file.  'q' (Q)u
 
 'y' will display the filename, the type of the pickle file, and then the contents of that file.
 
+There is nothing awe-inspiring about this codelette, but there is a lot that can be learned from it.
+For example, in this tiny file, you'll find working examples of:
+- logging: sends data to a file called pklshw.log. I like to use the command <code>tail -fn40 pklshow.log</code> in a terminal and watch it happen.
+- command line arguments parsing. Type <code>./pickleShow.py --help</code> for more info.
+- an example of how to iterate through a list of files from the directory you specify using oswalkList.
+- how to get the timestamp of a file.
+- opening a pickle file for reading.
+- Error handling for the occasional empty pickle file.  (try: except EOFError:)
+
+This is a handy utility that I use frequently as I'm building a new Python project.
+
+Enjoy!
 
 
