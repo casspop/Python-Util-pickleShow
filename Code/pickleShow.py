@@ -1,10 +1,26 @@
 #!/usr/bin/env python3
 #
 # pickleShow.py - Keep tabs on all the .pkl files in this directory and 
-# let me know if the timestamp changes.
-# (c) 2020 - Gregory A. Sanders
+# let me know if the timestamp changes OR show me the guts of a .pkl file.
 #
-import time,os,logging,argparse,traceback,signal,sys,pickle
+# Casspop Codelette: A short, useful, educational utility.
+#
+#     Copyright (c) 2006,2020 - Gregory Allen Sanders.
+
+#     This program is free software: you can redistribute it and/or modify
+#     it under the terms of the GNU General Public License as published by
+#     the Free Software Foundation, either version 3 of the License, or
+#     (at your option) any later version.
+
+#     This program is distributed in the hope that it will be useful,
+#     but WITHOUT ANY WARRANTY; without even the implied warranty of
+#     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#     GNU General Public License for more details.
+
+#    You should have received a copy of the GNU General Public License
+#     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+import os,logging,argparse,traceback,signal,sys,pickle
 from time import sleep
 
 #
