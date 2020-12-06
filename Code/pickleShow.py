@@ -29,6 +29,7 @@ from time import sleep
 def PklWatch():
     print('\nWatching for changes to pickle files in this directory.\n')
     pklshwHome = os.getcwd()
+    logger.info('Starting to monitor .pkl files in ' + str(pklshwHome) + '.')
     oswalkList = list(os.walk(pklshwHome))
     stampDict = {}
     for item in oswalkList[0][2]:
