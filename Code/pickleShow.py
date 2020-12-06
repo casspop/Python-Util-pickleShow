@@ -4,8 +4,7 @@
 # let me know if the timestamp changes.
 # (c) 2020 - Gregory A. Sanders
 #
-# import time,os,logging,argparse,traceback,signal,sys,subprocess,io
-import time,os,logging,configparser,argparse,traceback,signal,sys,pickle
+import time,os,logging,argparse,traceback,signal,sys,pickle
 from time import sleep
 
 #
@@ -104,19 +103,12 @@ if __name__ == "__main__":
     parserPklS = argparse.ArgumentParser()
     parserPklS.add_argument('-d', '--debug', help="Turn on debugging output to log file.", action="store_true")
     parserPklS.add_argument('-s', '--show', help="Select and show the contents of a .pkl file.", action="store_true")
-    parserPklS.add_argument('-f', '--func', help="Call the specified function.", action="store")
     pklshwHome = os.getcwd()                              ## os.getcwd() give you the Current Working Directory.  If you run this from some other directory
     # print(pklshwHome)                                     ## then the test.log file (for example) gets written there, not in the directory where this 
     logger = logging.getLogger(__name__)                ## python file lives.  
     #
-    # config = configparser.RawConfigParser()
-    # config.read(pklshwHome + '/allApp.conf')
     #
     argsPklS = parserPklS.parse_args()
-
-    # if argsPklS.func:
-    #     Tfunc = argsPklS.func
-    #     print(Tfunc)
 
     if argsPklS.debug:
         logging.basicConfig(filename=pklshwHome + '/pklshw.log', format='[%(name)s]:%(levelname)s: %(message)s. - %(asctime)s', datefmt='%D %H:%M:%S', level=logging.DEBUG)
