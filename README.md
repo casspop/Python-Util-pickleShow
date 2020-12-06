@@ -28,7 +28,7 @@ There is nothing awe-inspiring about this codelette, but there is a lot that can
 For example, in this tiny file, you'll find working examples of:
 - logging: sends data to a file called pklshw.log. I like to use the command <code>tail -fn40 pklshow.log</code> in a terminal and watch it happen.
 - command line arguments parsing. Type <code>./pickleShow.py --help</code> for more info.
-- an example of how to iterate through a list of files from the directory you specify using oswalkList.
+- an example of how to iterate through a list of files from the directory you specify using os.walk().
 - how to get the timestamp of a file.
 - opening a pickle file for reading.
 - Error handling for the occasional empty pickle file.  (try: except EOFError:)
