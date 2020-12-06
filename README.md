@@ -3,27 +3,26 @@ This Casspop Codelette monitors changes in pickle files OR shows contents of sel
 
 Put pickleShow.py in the folder where your pickle files are located and then invoke it from the command line:
 
-<code>greg@brilliant:~/all$ ./pickleShow.py
+<code>greg@brilliant:~/all$ ./pickleShow.py</code>
 
-Watching for changes to pickle files in this directory.
+With no command line arguments, pickleShow.py will display the Unix Epoch Time value for the last time each .pkl file was modified. Then it will monitor the status of those values, and when one of them changes, it will display the contents of the .pkl file.
 
-{'LastRecTime.pkl': 1607214910.531285}
-{'LastRecTime.pkl': 1607214910.531285, 'shopCurrentPins.pkl': 1606956046.5818481}
-{'LastRecTime.pkl': 1607214910.531285, 'shopCurrentPins.pkl': 1606956046.5818481, 'CurrentStatus.pkl': 1601648753.6658146}
-{'LastRecTime.pkl': 1607214910.531285, 'shopCurrentPins.pkl': 1606956046.5818481, 'CurrentStatus.pkl': 1601648753.6658146, 'noaaForecastData.pkl': 1607211568.9503055}<br>
-LastRecTime.pkl<br>
-1607214906<br>
-LastRecTime.pkl<br>
-1607214906<br>
-LastRecTime.pkl<br>
-1607214906<br>
-LastRecTime.pkl<br>
-1607214906<br>
-LastRecTime.pkl<br>
-1607214906<br>
-LastRecTime.pkl<br>
-LastRecTime.pkl was an empty .pkl file.  Moving on without it.<br>
-LastRecTime.pkl<br>
-1607214966<br>
-LastRecTime.pkl<br>
-1607214966</code>
+The point of this is to give you a clear understanding of when your program writes to a .pkl file, and what it was that was written.
+
+When you use the -s command line argument like this: 
+
+<code>greg@brilliant:~/all$ ./pickleShow.py -s</code>
+
+pickleShow.py gathers some stats and then:
+
+- tells you how many files are in your working directory
+- tells you how many of those files are .pkl files
+- iterates through the list of .pkl files asking you if you want to see its contents
+- waits for you to respond (y)es, (N)o default, or (q)uit
+
+If you press "Enter", the (N)o default passes you on to the next file.  'q' (Q)uits back to the prompt.
+
+'y' will display the filename, the type of the pickle file, and then the contents of that file.
+
+
+
